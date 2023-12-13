@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: nginx
+        image: lallaws/argocdpoc:latest
         ports:
         - containerPort: 80
