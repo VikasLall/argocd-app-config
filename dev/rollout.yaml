@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: myapp
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: lallaws/nginx:v2
+        ports:
+        - containerPort: 80
+  strategy:
+    blueGreen:
+      activeService: myapp-active-service
+      previewService: mmyapp-preview-service
+      autoPromotionEnabled: false
+      scaleDownDelaySeconds: 30      

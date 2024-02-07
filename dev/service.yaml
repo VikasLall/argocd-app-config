@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: myapp-service
+  name: myapp-active-service
 spec:
   selector:
     app: myapp
@@ -9,4 +9,17 @@ spec:
   - port: 8080
     protocol: TCP
     targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-preview-service
+spec:
+  selector:
+    app: myapp
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+
   
