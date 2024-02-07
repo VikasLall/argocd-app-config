@@ -20,6 +20,6 @@ spec:
   strategy:
     blueGreen:
       activeService: myapp-active-service
-      previewService: mmyapp-preview-service
+      previewService: myapp-preview-service
       autoPromotionEnabled: false
       scaleDownDelaySeconds: 30      
