@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: lallaws/myimage:v1
+        image: lallaws/myimage:v2
         ports:
         - containerPort: 80
   strategy:
